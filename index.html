@@ -2,10 +2,15 @@
 <head>
 	<title>reCAPTCHA demo: Simple page</title>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		function onSubmit() {
+			console.log(document.getElementById("demo-form"));
+		}
+	</script>
 </head>
 <body>
 <h1>Testing</h1>
-<form action="/test" method="POST">
+<form onsubmit="onSubmit()" id ="demo-form">
 	<div class="g-recaptcha" data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"></div>
 	<br/>
 	<input type="submit" value="Submit">
