@@ -4,12 +4,13 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script>
 		function onSubmit() {
+            event.preventDefault();
 			console.log(document.getElementById("demo-form"));
 		}
 	</script>
 </head>
 <body>
-<h1>Testing</h1>
+<h1>Testing Updated</h1>
 <form onsubmit="onSubmit()" id ="demo-form">
 	<div class="g-recaptcha" data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"></div>
 	<br/>
