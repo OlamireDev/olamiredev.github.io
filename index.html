@@ -1,68 +1,68 @@
-<!--<html>-->
-<!--<head>-->
-<!--	<title>reCAPTCHA demo: Simple page</title>-->
-<!--	<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Testing</h1>-->
-<!--<form action="/test" method="POST">-->
-<!--	<div class="g-recaptcha" data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"></div>-->
-<!--	<br/>-->
-<!--	<input type="submit" value="Submit">-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Form with reCAPTCHA</title>
+	<title>reCAPTCHA demo: Simple page</title>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<script>
-        function onSubmit(token) {
-            // Prevent the default form submission
-            event.preventDefault();
-
-            console.log('reCAPTCHA token:', token);
-
-            // Gather form data
-            const formData = {
-                username: document.querySelector('[name="username"]').value,
-                password: document.querySelector('[name="password"]').value,
-                "g-recaptcha-response": token // Include the reCAPTCHA token
-            };
-
-            // Make the API call
-            fetch('/your-api-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    // Handle success, e.g., display a success message or redirect
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    // Handle errors, e.g., display an error message
-                });
-        }
-	</script>
 </head>
 <body>
-
-<form id="myForm" onsubmit="event.preventDefault(); grecaptcha.execute();">
-	<input type="text" name="username" placeholder="Username" required>
-	<input type="password" name="password" placeholder="Password" required>
-	<button class="g-recaptcha"
-	        data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"
-	        data-callback="onSubmit"
-	        data-action="submit">Submit</button>
+<h1>Testing</h1>
+<form action="/test" method="POST">
+	<div class="g-recaptcha" data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"></div>
+	<br/>
+	<input type="submit" value="Submit">
 </form>
-
 </body>
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--	<meta charset="UTF-8">-->
+<!--	<title>Form with reCAPTCHA</title>-->
+<!--	<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+<!--	<script>-->
+<!--        function onSubmit(token) {-->
+<!--            // Prevent the default form submission-->
+<!--            event.preventDefault();-->
+
+<!--            console.log('reCAPTCHA token:', token);-->
+
+<!--            // Gather form data-->
+<!--            const formData = {-->
+<!--                username: document.querySelector('[name="username"]').value,-->
+<!--                password: document.querySelector('[name="password"]').value,-->
+<!--                "g-recaptcha-response": token // Include the reCAPTCHA token-->
+<!--            };-->
+
+<!--            // Make the API call-->
+<!--            fetch('/your-api-endpoint', {-->
+<!--                method: 'POST',-->
+<!--                headers: {-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                },-->
+<!--                body: JSON.stringify(formData)-->
+<!--            })-->
+<!--                .then(response => response.json())-->
+<!--                .then(data => {-->
+<!--                    console.log('Success:', data);-->
+<!--                    // Handle success, e.g., display a success message or redirect-->
+<!--                })-->
+<!--                .catch((error) => {-->
+<!--                    console.error('Error:', error);-->
+<!--                    // Handle errors, e.g., display an error message-->
+<!--                });-->
+<!--        }-->
+<!--	</script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<form id="myForm" onsubmit="event.preventDefault(); grecaptcha.execute();">-->
+<!--	<input type="text" name="username" placeholder="Username" required>-->
+<!--	<input type="password" name="password" placeholder="Password" required>-->
+<!--	<button class="g-recaptcha"-->
+<!--	        data-sitekey="6LdqBJ8pAAAAAO3LAV94EYk__JC1ZjrY6CrUZN0D"-->
+<!--	        data-callback="onSubmit"-->
+<!--	        data-action="submit">Submit</button>-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
